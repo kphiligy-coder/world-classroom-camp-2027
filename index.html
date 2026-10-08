@@ -84,7 +84,7 @@ section{padding:76px 0}.section-title{text-align:center;margin-bottom:34px}.sect
 <div class="section-title"><div class="eyebrow">REGISTRATION</div><h2>世界教室・國際體驗營報名</h2><p>請填寫以下資料。送出後系統會提供報名編號，請妥善保存。</p></div>
 <form id="campForm" onsubmit="return submitRegistration(event)">
 <div class="step"><h3>STEP 1｜學員資料</h3><div class="fields">
-<div class="field"><label>中文姓名 *</label><input required name="student_name"></div><div class="field"><label>性別 *</label><select required name="gender"><option value="">請選擇</option><option>男</option><option>女</option><option>其他／不便透露</option></select></div>
+<div class="field"><label>中文姓名 *</label><input required name="student_name"></div><div class="field"><label>英文姓名（English Name）</label><input name="english_name" maxlength="60" autocomplete="off" placeholder="選填，沒有英文名字可留空"></div><div class="field"><label>性別 *</label><select required name="gender"><option value="">請選擇</option><option>男</option><option>女</option><option>其他／不便透露</option></select></div>
 <div class="field"><label>出生年月日 *</label><input required type="date" name="birthday"></div><div class="field"><label>身分證字號 *</label><input required name="idno" autocomplete="off" placeholder="辦理活動／保險相關作業"></div>
 <div class="field"><label>就讀學校 *</label><input required name="school"></div><div class="field"><label>目前年級 *</label><select required name="grade"><option value="">請選擇</option><option>國小三年級</option><option>國小四年級</option><option>國小五年級</option><option>國小六年級</option><option>國中七年級</option></select></div>
 </div></div>
@@ -131,6 +131,7 @@ async function submitRegistration(e) {
   const fd = new FormData(form);
   const payload = {
     studentName: (fd.get("student_name") || "").trim(),
+    englishName: (fd.get("english_name") || "").trim(),
     gender: fd.get("gender") || "",
     birthDate: fd.get("birthday") || "",
     studentId: (fd.get("idno") || "").trim(),
@@ -185,5 +186,5 @@ async function submitRegistration(e) {
   return false;
 }
 </script>
-<div style="text-align:center;font-size:11px;color:#999;padding:8px 12px 90px;">Site Version 1.4</div>
+<div style="text-align:center;font-size:11px;color:#999;padding:8px 12px 90px;">Site Version 1.5</div>
 </body></html>
