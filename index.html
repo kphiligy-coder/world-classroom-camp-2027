@@ -28,6 +28,18 @@ section{padding:76px 0}.section-title{text-align:center;margin-bottom:34px}.sect
 .submit-note{font-size:13px;color:var(--muted)}footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.mobilebar{display:none}
 @media(max-width:800px){.links a:not(.navcta){display:none}.day{display:block;height:auto}.day .inside{min-height:0}.day img{height:210px}.hero{min-height:auto;padding:62px 0 48px;background:linear-gradient(#fff 0 58%,rgba(255,255,255,.88)),url('hero.jpg') center/cover}.hero-copy{max-width:none}.intro,.two,.info-grid{grid-template-columns:1fr}.stay-gallery{grid-template-columns:1fr 1fr;grid-template-rows:210px 120px}.stay-gallery img:first-child{grid-column:1/3;grid-row:auto}.values,.days{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.cta .wrap{display:block}.cta .btn{margin-top:18px}.mobilebar{display:flex;position:fixed;bottom:0;left:0;right:0;padding:10px 18px;background:rgba(255,255,255,.96);border-top:1px solid var(--line);z-index:30}.mobilebar .btn{width:100%}body{padding-bottom:68px}}
  .discount-qualification{display:block;margin:12px 0;padding:12px 14px;border-radius:12px;background:#faf0ef;color:#67252b;line-height:1.7;font-size:.95em}.discount-qualification strong{color:var(--wine)}
+.fee-confirm-card{padding:clamp(22px,5vw,36px);border-radius:22px}
+.fee-confirm-card h3{color:var(--ink);font-size:22px;margin:0 0 22px;font-weight:900}
+.fee-primary{font-size:clamp(19px,3.5vw,26px);margin:0 0 4px;line-height:1.5}
+.fee-primary strong{color:var(--wine);font-weight:900;white-space:nowrap}
+.fee-deadline{font-size:16px;margin:0 0 20px}
+.fee-alert{display:flex;gap:14px;align-items:center;background:#fbf2f1;border-radius:18px;padding:18px 20px;margin:20px 0 22px;font-size:16px;line-height:1.65}
+.fee-alert-icon{font-size:30px;flex:none}
+.fee-alert>div{border-left:2px solid var(--wine);padding-left:16px}
+.fee-alert strong,.fee-alert b{color:var(--wine);font-weight:900}
+.fee-regular{font-size:19px;margin:0 0 22px}
+.fee-confirm-card .btn{font-size:17px;padding:14px 25px}
+@media(max-width:480px){.fee-alert{padding:14px 12px;gap:8px;font-size:14px}.fee-alert-icon{font-size:24px}.fee-alert>div{padding-left:10px}.fee-primary{font-size:20px}}
 </style>
 </head>
 <body>
@@ -109,7 +121,15 @@ section{padding:76px 0}.section-title{text-align:center;margin-bottom:34px}.sect
 <label class="consent"><input type="radio" required name="portrait" value="agree"> <span>同意於活動紀錄、官方網站、社群平台及相關活動介紹使用。</span></label>
 <label class="consent"><input type="radio" required name="portrait" value="disagree"> <span>不同意將孩子可辨識之影像用於對外公開使用。</span></label>
 </div>
-<div class="card"><b>費用確認</b><p>早鳥價 <b style="color:var(--wine)">NT$13,800／人</b>（2026/11/30 前完成報名及繳費）<br><span class="discount-qualification">優惠方案限報名寒假班，如無報名寒假班，早鳥優惠價 <strong>NT$15,800／人</strong>。</span><br>原價 NT$16,888／人</p><button class="btn" id="submitBtn" type="submit">確認送出報名 →</button><p class="submit-note" id="submitStatus">送出後請稍候，請勿重複點擊。</p></div>
+<div class="card fee-confirm-card">
+<h3>費用確認</h3>
+<p class="fee-primary">早鳥價 <strong>NT$13,800／人</strong></p>
+<p class="fee-deadline">（2026/11/30 前完成報名及繳費）</p>
+<div class="fee-alert"><span class="fee-alert-icon" aria-hidden="true">📣</span><div><strong>優惠方案限報名寒假班</strong><div>如無報名寒假班，早鳥優惠價 <b>NT$15,800／人</b>。</div></div></div>
+<p class="fee-regular">原價 NT$16,888／人</p>
+<button class="btn" id="submitBtn" type="submit">確認送出報名 →</button>
+<p class="submit-note" id="submitStatus">送出後請稍候，請勿重複點擊。</p>
+</div>
 </form>
 </div></section>
 </main>
