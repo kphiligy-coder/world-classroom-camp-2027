@@ -117,6 +117,8 @@ section{padding:76px 0}.section-title{text-align:center;margin-bottom:34px}.sect
 <div class="step"><h3>STEP 5｜重要告知與同意</h3>
 <div class="notice"><b>個人資料保護與報名告知</b><br>為辦理營隊報名、住宿、餐飲、保險及緊急照護，我們將於必要範圍內使用報名資料。請先閱讀完整的 <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color:var(--wine);text-decoration:underline;font-weight:800">個人資料蒐集、處理及利用告知事項 ↗</a>。</div>
 <label class="consent"><input type="checkbox" required> <span>我已閱讀並瞭解<a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color:var(--wine);text-decoration:underline">個人資料蒐集、處理及利用告知事項</a>。*</span></label>
+<div class="notice" style="margin-top:14px"><b>營隊退費與取消辦法</b><br>報名前請閱讀 <a href="refund.html" target="_blank" rel="noopener noreferrer" style="color:var(--wine);text-decoration:underline;font-weight:800">營隊退費與取消辦法（REFUND-2026-01）↗</a>，了解取消時點、不可抗力、疾病退出及退費申請方式。</div>
+<label class="consent"><input type="checkbox" id="refundConsent" name="refund_consent" value="agree" required> <span>我已閱讀並瞭解<a href="refund.html" target="_blank" rel="noopener noreferrer" style="color:var(--wine);text-decoration:underline">《營隊退費與取消辦法》</a>（版本 REFUND-2026-01），並同意依適用法令及本辦法辦理。*</span></label>
 <div class="notice"><b>活動攝影及影像使用</b><br>營隊期間可能進行攝影及錄影。是否同意孩子可辨識影像對外使用，不影響參加本營隊之權益。</div>
 <label class="consent"><input type="radio" required name="portrait" value="agree"> <span>同意於活動紀錄、官方網站、社群平台及相關活動介紹使用。</span></label>
 <label class="consent"><input type="radio" required name="portrait" value="disagree"> <span>不同意將孩子可辨識之影像用於對外公開使用。</span></label>
@@ -134,7 +136,7 @@ section{padding:76px 0}.section-title{text-align:center;margin-bottom:34px}.sect
 </div></section>
 </main>
 
-<footer><div class="wrap">主辦單位：泰維尼文教有限公司<br><a href="privacy.html" style="text-decoration:underline">個人資料蒐集、處理及利用告知事項</a><br>※ 集合／解散資訊、付款方式及退費規定將於正式上線前補充。</div></footer>
+<footer><div class="wrap">主辦單位：泰維尼文教有限公司<br><a href="privacy.html" style="text-decoration:underline">個人資料蒐集、處理及利用告知事項</a><br><a href="refund.html" style="text-decoration:underline">營隊退費與取消辦法</a><br>※ 集合／解散資訊與付款方式仍待主辦單位公告。</div></footer>
 <div class="mobilebar"><a class="btn" href="#register">立即報名｜早鳥 NT$13,800</a></div>
 <script>
 const REGISTRATION_ENDPOINT = "https://script.google.com/macros/s/AKfycbx8fdZB-rgoS6iS2Rm4YcsVU8ke0nbJbmbnil5hxboCHsx0aYUrdV_6h-z6OtCY588v7A/exec";
@@ -169,6 +171,8 @@ async function submitRegistration(e) {
     specialCare: (fd.get("special") || "").trim(),
     imageConsent: fd.get("portrait") === "agree" ? "同意公開使用" : "不同意公開使用",
     winterClass: fd.get("winter_class") || "",
+    refundConsent: fd.get("refund_consent") === "agree",
+    refundVersion: "REFUND-2026-01",
     note: ""
   };
 
